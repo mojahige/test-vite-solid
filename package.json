@@ -2,15 +2,27 @@
   "name": "test-vite-solid",
   "private": true,
   "description": "",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite serve"
+    "serve": "vite serve",
+    "lint": "yarn lint:prettier && yarn lint:eslint",
+    "lint:fix": "yarn lint:prettier:write && yarn lint:eslint:fix",
+    "lint:eslint": "eslint './**/*.{ts,tsx,js}'",
+    "lint:eslint:fix": "eslint --fix './**/*.{ts,tsx,js}'",
+    "lint:prettier": "yarn prettier --check './**/*.{ts,tsx,js}'",
+    "lint:prettier:write": "yarn prettier --write './**/*.{ts,tsx,js}'"
   },
   "author": "mojahige",
   "license": "UNLICENSED",
   "devDependencies": {
     "@types/node": "^15.6.0",
+    "@typescript-eslint/eslint-plugin": "^4.24.0",
+    "@typescript-eslint/parser": "^4.24.0",
+    "eslint": "^7.26.0",
+    "eslint-config-prettier": "^8.3.0",
+    "prettier": "^2.3.0",
     "vite": "^2.3.3",
     "vite-plugin-solid": "^1.8.0"
   },
