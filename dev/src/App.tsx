@@ -1,6 +1,6 @@
-import type { Component } from "solid-js";
-import styles from "./App.module.css";
-import image from "@assets/dummy.png";
+import type { Component } from 'solid-js'
+import styles from './App.module.css'
+import image from '@assets/dummy.png'
 
 console.log(styles)
 
@@ -12,6 +12,6 @@ const App: Component = () => {
       </div>
     </>
   )
-};
+}
 
-export default App;
+export default App

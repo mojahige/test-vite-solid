@@ -1,21 +1,18 @@
 import path from 'path'
-import { defineConfig } from 'vite';
-import solidPlugin from 'vite-plugin-solid';
-
-console.log(path.resolve(__dirname, './dev/src'))
+import { defineConfig } from 'vite'
+import solidPlugin from 'vite-plugin-solid'
 
 export default defineConfig({
   root: './dev',
   publicDir: '../public',
   build: {
-    outDir: '../dist'
+    outDir: '../dist',
   },
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './dev/src'),
-      // '/@/': path.resolve(__dirname, './dev/src'),
-      '@assets': path.resolve(__dirname, './dev/assets')
+      '@assets': path.resolve(__dirname, './dev/assets'),
     },
   },
   plugins: [solidPlugin()],
-});
+})
