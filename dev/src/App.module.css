@@ -1,0 +1,9 @@
+.ImageContainer {
+  text-align: center;
+}
+
+.Image {
+  width: 100%;
+  max-width: 768px;
+  height: auto;
+}
