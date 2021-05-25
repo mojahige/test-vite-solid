@@ -7,6 +7,12 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite serve",
+    "lint": "pnpm lint:eslint && pnpm lint:prettier",
+    "lint:fix": "pnpm lint:stylelint:fix & pnpm lint:eslint:fix && pnpm lint:prettier:write",
+    "lint:eslint": "eslint './dev/**/*.{ts,tsx,js}'",
+    "lint:eslint:fix": "eslint --fix './dev/**/*.{ts,tsx,js}'",
+    "lint:prettier": "prettier --check './dev/**/*.{ts,tsx,js}'",
+    "lint:prettier:write": "prettier --write './dev/**/*.{ts,tsx,js}'",
     "lint:stylelint": "stylelint './dev/**/*.css'",
     "lint:stylelint:fix": "stylelint --fix './dev/**/*.css'"
   },
