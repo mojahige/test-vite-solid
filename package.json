@@ -7,12 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite serve",
-    "lint": "yarn lint:prettier && yarn lint:eslint",
-    "lint:fix": "yarn lint:prettier:write && yarn lint:eslint:fix",
-    "lint:eslint": "eslint './**/*.{ts,tsx,js}'",
-    "lint:eslint:fix": "eslint --fix './**/*.{ts,tsx,js}'",
-    "lint:prettier": "yarn prettier --check './**/*.{ts,tsx,js}'",
-    "lint:prettier:write": "yarn prettier --write './**/*.{ts,tsx,js}'"
+    "lint:stylelint": "stylelint './dev/**/*.css'",
+    "lint:stylelint:fix": "stylelint --fix './dev/**/*.css'"
   },
   "author": "mojahige",
   "license": "UNLICENSED",
@@ -25,6 +21,8 @@
     "eslint-config-prettier": "^8.3.0",
     "postcss": "^8.3.0",
     "prettier": "^2.3.0",
+    "stylelint": "^13.13.1",
+    "stylelint-config-standard": "^22.0.0",
     "tailwindcss": "^2.1.2",
     "vite": "^2.3.3",
     "vite-plugin-solid": "^1.8.0"
