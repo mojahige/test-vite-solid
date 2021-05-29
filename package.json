@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "serve": "vite serve",
+    "serve": "vite preview",
     "fix": "pnpm lint:fix",
     "lint": "pnpm lint:eslint && pnpm lint:prettier",
     "lint:fix": "pnpm lint:stylelint:fix & pnpm lint:eslint:fix && pnpm lint:prettier:write",
