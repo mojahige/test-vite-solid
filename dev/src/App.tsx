@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js'
-import { Heading } from '@/Heading'
+import { Heading } from '@src/Heading'
 import styles from './App.module.css'
 import image from '@assets/dummy.png'
 
