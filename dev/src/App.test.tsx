@@ -1,5 +1,5 @@
 import { render, screen } from 'solid-testing-library'
-import App from './App'
+import { App } from './App'
 
 describe('Test the browser', () => {
   test('should render in the browser', () => {
