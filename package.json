@@ -7,6 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "serve": "vite serve",
+    "fix": "pnpm lint:fix",
     "lint": "pnpm lint:eslint && pnpm lint:prettier",
     "lint:fix": "pnpm lint:stylelint:fix & pnpm lint:eslint:fix && pnpm lint:prettier:write",
     "lint:eslint": "eslint './dev/**/*.{ts,tsx,js}'",
