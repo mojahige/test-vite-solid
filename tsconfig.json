@@ -10,9 +10,9 @@
     "types": ["vite/client", "jest"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./dev/src/*"],
+      "@src/*": ["./dev/src/*"],
       "@assets/*": ["./dev/assets/*"]
     }
   },
-  "include": ["./dev/src/**/*"]
+  "include": ["./jest.setup.ts", "./dev/src/**/*"]
 }
