@@ -12,7 +12,8 @@
     "paths": {
       "@src/*": ["./dev/src/*"],
       "@assets/*": ["./dev/assets/*"]
-    }
+    },
+    "strict": true
   },
   "include": ["./jest.setup.ts", "./dev/src/**/*"]
 }
