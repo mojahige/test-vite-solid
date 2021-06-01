@@ -1,4 +1,3 @@
-import '@testing-library/jest-dom/extend-expect'
 import { render } from 'solid-testing-library'
 import { Heading } from './Heading'
 
