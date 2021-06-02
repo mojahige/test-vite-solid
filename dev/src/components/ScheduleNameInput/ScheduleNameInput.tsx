@@ -12,7 +12,7 @@ export interface Props {
   handleInput?: (event: HandInputArguments) => void;
 }
 
-export const EventNameInput: Component<Props> = (props) => {
+export const ScheduleNameInput: Component<Props> = (props) => {
   return (
     <div class="flex">
       <input

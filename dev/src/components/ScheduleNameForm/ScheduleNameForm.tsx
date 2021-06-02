@@ -1,9 +1,9 @@
 import type { Component } from 'solid-js';
-import type { HandInputArguments } from '@src/components/EventNameInput';
+import type { HandInputArguments } from '@src/components/ScheduleNameInput';
 
 import { For } from 'solid-js';
-import { useEventName } from './dependencies';
-import { EventNameInput } from '@src/components/EventNameInput';
+import { useScheduleName } from './dependencies';
+import { ScheduleNameInput } from '@src/components/ScheduleNameInput';
 import { isTest } from '@src/enviroment';
 import { useDaySchedule } from '@src/stores/DayScheduleStore';
 
@@ -11,23 +11,23 @@ export type HandSubmitArgument = Event & {
   submitter: HTMLElement;
 };
 
-export const EventNameForm: Component = () => {
+export const ScheduleNameForm: Component = () => {
   const [state, { add }] = useDaySchedule();
-  const { eventName, setEventName } = useEventName('');
+  const { scheduleName, setScheduleName } = useScheduleName('');
   const handleInput = (event: HandInputArguments) => {
-    setEventName({
+    setScheduleName({
       value: event.currentTarget.value,
     });
   };
   const handleSubmit = (event: HandSubmitArgument) => {
     event.preventDefault();
 
-    if (!eventName.value) {
+    if (!scheduleName.value) {
       return;
     }
 
-    add?.({ name: eventName.value });
-    setEventName({ value: '' });
+    add?.({ name: scheduleName.value });
+    setScheduleName({ value: '' });
   };
 
   return (
@@ -38,8 +38,8 @@ export const EventNameForm: Component = () => {
         onSubmit={handleSubmit}
         data-testid={isTest() ? 'event-name-form' : null}
       >
-        <EventNameInput
-          value={eventName.value}
+        <ScheduleNameInput
+          value={scheduleName.value}
           handleInput={handleInput}
           placeholder="👉 input your schedule name"
         />

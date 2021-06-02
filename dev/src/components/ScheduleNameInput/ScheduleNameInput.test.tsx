@@ -1,10 +1,10 @@
 import '@testing-library/jest-dom/extend-expect';
 import { render, screen, fireEvent } from 'solid-testing-library';
-import { EventNameInput } from './EventNameInput';
+import { ScheduleNameInput } from './ScheduleNameInput';
 
-describe('EventNameInput component', () => {
+describe('ScheduleNameInput component', () => {
   test('コンポーネントが描画される', () => {
-    render(() => <EventNameInput />);
+    render(() => <ScheduleNameInput />);
 
     expect(screen.getByTestId('event-name-input')).toBeInTheDocument();
   });
@@ -13,7 +13,7 @@ describe('EventNameInput component', () => {
     [undefined, null, false],
     ['foo', 'foo', true],
   ])('placeholder を設定できる', (prop, value, hasAttributeExpected) => {
-    render(() => <EventNameInput placeholder={prop} />);
+    render(() => <ScheduleNameInput placeholder={prop} />);
 
     const testElement = screen.getByTestId('event-name-input');
 
@@ -25,7 +25,7 @@ describe('EventNameInput component', () => {
     [undefined, null, false],
     ['foo', 'foo', true],
   ])('name を設定できる', (prop, value, hasAttributeExpected) => {
-    render(() => <EventNameInput name={prop} />);
+    render(() => <ScheduleNameInput name={prop} />);
 
     const testElement = screen.getByTestId('event-name-input');
 
@@ -37,7 +37,7 @@ describe('EventNameInput component', () => {
     [undefined, ''],
     ['foo', 'foo'],
   ])('value を設定できる', (prop, value) => {
-    render(() => <EventNameInput value={prop} />);
+    render(() => <ScheduleNameInput value={prop} />);
 
     const testElement = screen.getByTestId('event-name-input');
 
@@ -47,7 +47,7 @@ describe('EventNameInput component', () => {
   test('handleInput が実行される', async () => {
     const handleInput = jest.fn();
 
-    render(() => <EventNameInput handleInput={handleInput} />);
+    render(() => <ScheduleNameInput handleInput={handleInput} />);
 
     const testElement = await screen.findByTestId('event-name-input');
 

@@ -1,26 +1,26 @@
 import { render, screen } from 'solid-testing-library';
-import { useEventName } from './dependencies';
-import { EventNameForm } from './EventNameForm';
+import { useScheduleName } from './dependencies';
+import { ScheduleNameForm } from './ScheduleNameForm';
 
 describe('useEventName', () => {
   test('state の初期値を設定できる', () => {
-    const { eventName } = useEventName('foo');
+    const { scheduleName } = useScheduleName('foo');
 
-    expect(eventName.value).toBe('foo');
+    expect(scheduleName.value).toBe('foo');
   });
 
   test('state 値を変更できる', () => {
-    const { eventName, setEventName } = useEventName('');
+    const { scheduleName, setScheduleName } = useScheduleName('');
 
-    setEventName({ value: 'foo' });
+    setScheduleName({ value: 'foo' });
 
-    expect(eventName.value).toBe('foo');
+    expect(scheduleName.value).toBe('foo');
   });
 });
 
 describe('EventNameForm component', () => {
   test('コンポーネントが描画される', () => {
-    render(() => <EventNameForm />);
+    render(() => <ScheduleNameForm />);
 
     expect(screen.getByTestId('event-name-form')).toBeInTheDocument();
   });
