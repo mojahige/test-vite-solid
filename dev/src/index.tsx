@@ -3,4 +3,10 @@ import { App } from '@src/components/App'
 
 import './index.css'
 
-render(() => <App />, document.getElementById('app'))
+const mountElement = document.getElementById('app')
+
+if (mountElement) {
+  render(() => <App />, mountElement)
+} else {
+  console.error(`'mountElement' is not found...😭`)
+}
