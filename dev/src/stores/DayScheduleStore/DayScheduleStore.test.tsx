@@ -1,33 +1,33 @@
 // import { render, screen } from 'solid-testing-library';
 import { fireEvent, render, screen } from 'solid-testing-library';
-import { EventProvider, useEvent } from './EventStore';
+import { DayScheduleProvider, useDaySchedule } from './DayScheduleStore';
 
-describe('EventProvider', () => {
+describe('DayScheduleProvider', () => {
   test('初期値が空の配列である', () => {
     const Test = () => {
-      const [state] = useEvent();
+      const [state] = useDaySchedule();
 
-      return <p data-testid="paragraph">{state.events.length}</p>;
+      return <p data-testid="paragraph">{state.schedules.length}</p>;
     };
 
     render(() => {
       return (
-        <EventProvider>
+        <DayScheduleProvider>
           <Test />
-        </EventProvider>
+        </DayScheduleProvider>
       );
     });
 
     expect(screen.getByTestId('paragraph').textContent).toBe('0');
   });
 
-  test('event を追加できる', () => {
+  test('schedule を追加できる', () => {
     const Test = () => {
-      const [state, { add }] = useEvent();
+      const [state, { add }] = useDaySchedule();
 
       return (
         <>
-          <p data-testid="paragraph">{state.events.length}</p>
+          <p data-testid="paragraph">{state.schedules.length}</p>
           <button
             onClick={() => {
               add?.({ name: '🐶' });
@@ -43,9 +43,9 @@ describe('EventProvider', () => {
 
     render(() => {
       return (
-        <EventProvider>
+        <DayScheduleProvider>
           <Test />
-        </EventProvider>
+        </DayScheduleProvider>
       );
     });
 
