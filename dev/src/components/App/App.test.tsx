@@ -1,10 +1,10 @@
 import { render, screen } from 'solid-testing-library';
 import { App } from './App';
 
-describe('Test the browser', () => {
-  test('should render in the browser', () => {
+describe('App component', () => {
+  test('コンポーネントが描画される', () => {
     render(() => <App />);
 
-    expect(screen.getByTestId('foo').tagName.toLowerCase()).toBe('div');
+    expect(screen.getByTestId('app')).toBeInTheDocument();
   });
 });
