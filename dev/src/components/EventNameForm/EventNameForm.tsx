@@ -5,14 +5,14 @@ import { For } from 'solid-js';
 import { useEventName } from './dependencies';
 import { EventNameInput } from '@src/components/EventNameInput';
 import { isTest } from '@src/enviroment';
-import { useEvent } from '@src/stores/EventStore';
+import { useDaySchedule } from '@src/stores/DayScheduleStore';
 
 export type HandSubmitArgument = Event & {
   submitter: HTMLElement;
 };
 
 export const EventNameForm: Component = () => {
-  const [state, { add }] = useEvent();
+  const [state, { add }] = useDaySchedule();
   const { eventName, setEventName } = useEventName('');
   const handleInput = (event: HandInputArguments) => {
     setEventName({
@@ -32,7 +32,7 @@ export const EventNameForm: Component = () => {
 
   return (
     <>
-      <p>{state.events.length}</p>
+      <p>{state.schedules.length}</p>
       <form
         className="block w-full"
         onSubmit={handleSubmit}
@@ -44,7 +44,7 @@ export const EventNameForm: Component = () => {
           placeholder="👉 input your schedule name"
         />
       </form>
-      <For each={state.events}>{(event) => <p>{event.name}</p>}</For>
+      <For each={state.schedules}>{(schedule) => <p>{schedule.name}</p>}</For>
     </>
   );
 };
