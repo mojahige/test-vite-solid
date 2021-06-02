@@ -1,5 +1,5 @@
 import type { Component } from 'solid-js';
-import { isTest } from '@src/enviroment';
+import { isTestEnv } from '@src/is';
 
 export type HandInputArguments = InputEvent & {
   currentTarget: HTMLInputElement;
@@ -22,7 +22,7 @@ export const ScheduleNameInput: Component<Props> = (props) => {
         placeholder={props.placeholder}
         value={props.value}
         type="text"
-        data-testid={isTest() ? 'event-name-input' : null}
+        data-testid={isTestEnv() ? 'event-name-input' : null}
       />
       <button class="flex-none w-24 h-11 rounded-sm bg-blue-400 text-white shadow-md focus:outline-none focus:ring-2 focus:ring-blue-600">
         📝
